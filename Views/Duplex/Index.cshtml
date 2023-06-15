@@ -1,0 +1,62 @@
+﻿@{
+      ViewData["Title"] = "Notice page";
+}
+<style>
+      .zoom-image {
+            transition: transform 0.3s;
+      }
+
+            .zoom-image:hover {
+                  transform: scale(5.2);
+                  cursor:pointer;
+            }
+</style>
+<partial name="_ValidationScriptsPartial" />
+<script src="~/js/Admin/duplex_crud.js"></script>
+<div class="row quick-action-toolbar">
+      <div class="col-md-12 grid-margin" style="margin-top:0px">
+            <div class="card">
+                  <div class="card-header d-block d-md-flex">
+                        <h5 class="mb-0"><i class="icon-screen-desktop"></i> Manage Duplex</h5>
+                        <p class="ml-auto mb-0">How are your active users trending overtime?<i class="icon-bulb"></i></p>
+                  </div>
+                  <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
+                        <div class="container-fluid" style="margin-top:10px;">
+                              <div class="row" style="margin-top:5px;">
+                                    <div class="col-md-10">
+                                          <a class="btn btn-primary" asp-controller="Duplex" asp-action="Create"><i class="icon-plus"></i>&nbsp;Add Duplex</a>
+                                    </div>
+                                    <div class="col-md-2">
+                                    </div>
+                              </div>
+                              <div class="row" style="margin:5px;">
+
+                                    <table id="tblDuplexDetails" class="table-bordered" width="100%">
+                                          <thead>
+                                                <tr>
+                                                      <th>Sl No</th>
+                                                      <th>Duplex Id</th>
+                                                      <th>Duplex Number</th>
+                                                      <th>Owner Name</th>
+                                                      <th>Contact</th>
+                                                      <th>Alternate Contact</th>
+                                                      <th>Email Id</th>
+                                                      <th>Photo Copy</th>
+                                                      <th>Adhar Card Copy</th>
+                                                      <th>Active Status</th>
+                                                      <th>Action</th>
+                                                </tr>
+                                          </thead>
+                                          <tbody id="tblDuplexBody">
+                                          </tbody>
+                                    </table>
+
+                              </div>
+                        </div>
+
+                  </div>
+            </div>
+      </div>
+</div>
+
+

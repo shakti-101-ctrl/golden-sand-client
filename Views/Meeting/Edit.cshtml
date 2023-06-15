@@ -1,0 +1,70 @@
+﻿<partial name="_ValidationScriptsPartial" />
+
+<script src="~/js/Admin/meeting_crud.js"></script>
+<script src="~/js/Admin/common_service.js"></script>
+<style>
+      .mul-select {
+            min-width: 100%;
+      }
+      .star
+      {
+            color:red;
+      }
+</style>
+<div class="row quick-action-toolbar">
+      <div class="col-md-12 grid-margin" style="margin-top:0px">
+            <div class="card">
+                  <div class="card-header d-block d-md-flex">
+                        <h5 class="mb-0"><i class="icon-note"></i> Edit Meeting</h5>
+                        <p class="ml-auto mb-0">Get the experience of using this application!!<i class="icon-bulb"></i></p>
+                  </div>
+                  <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
+                        <div class="col-md-6 grid-margin stretch-card">
+                              <div class="card">
+                                    <div class="card-body">
+
+                                          <input type="hidden" id="hdnMeeingId" />
+                                          <div class="form-group">
+                                                <label for="txtHeadingText">Heading Text <span class="star">*</span></label>
+                                                <input type="text" class="form-control Mandatory" id="txtHeadingText" name="txtHeadingText" placeholder="Heading Text" data-label="Expense Head">
+                                                <small class="form-text" id="ErrtxtHeadingText" style="display:none; color:red"></small>
+
+                                          </div>
+                                          <div class="form-group">
+                                                <label for="txtDescription">Description <span class="star">*</span></label>
+                                                <textarea class="form-control Mandatory" id="txtDescription" rows="4" data-label="Description"></textarea>
+                                                <small class="form-text" id="ErrtxtDescription" style="display:none; color:red"></small>
+                                          </div>
+                                          <div class="form-group">
+                                                <label for="txtStartDate">Meeting Start Date <span class="star">*</span></label>
+                                                <input type="date" class="form-control Mandatory" id="txtStartDate" placeholder="Start Date" data-label="Start Date">
+                                                <small class="form-text" id="ErrtxtStartDate" style="display:none; color:red"></small>
+                                          </div>
+                                          <div class="form-group">
+                                                <label for="txtEndDate">Meeting End Date <span class="star">*</span></label>
+                                                <input type="date" class="form-control Mandatory" id="txtEndDate" placeholder="End Date" data-label="End Date">
+                                                <small class="form-text" id="ErrtxtEndDate" style="display:none; color:red"></small>
+                                          </div>
+                                          <div class="form-group">
+                                                <label for="drpInvitedPersons">Invited Persons <span class="star">*</span></label>
+                                                <select class="form-control mul-select" id="drpInvitedPersons" multiple data-label="Invited Persons">
+                                                      
+                                                </select>
+                                                <small class="form-text" id="ErrdrpInvitedPersons" style="display:none; color:red"></small>
+                                          </div>
+                                         
+                                          <div class="form-check form-check-flat form-check-primary">
+                                                <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" id="cbStatus" checked> Active
+                                                </label>
+                                          </div>
+                                          <button type="button" class="btn btn-primary mr-2" onclick="updateMeeting()">Update</button>
+                                          <a class="btn btn-primary" asp-controller="Meeting" asp-action="Index">Cancel</a>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+

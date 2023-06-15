@@ -1,0 +1,69 @@
+﻿
+<partial name="_ValidationScriptsPartial" />
+<style>
+      span.star {
+            color: red;
+      }
+</style>
+<script src="~/js/Admin/expense_crud.js"></script>
+<div class="row quick-action-toolbar">
+      <div class="col-md-12 grid-margin" style="margin-top:0px">
+            <div class="card">
+                  <div class="card-header d-block d-md-flex">
+                        <h5 class="mb-0"><i class="icon-note"></i> Edit Expense</h5>
+                        <p class="ml-auto mb-0">Get the experience of using this application!!<i class="icon-bulb"></i></p>
+                  </div>
+                  <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
+                        <div class="col-md-6 grid-margin stretch-card">
+                              <div class="card">
+                                    <div class="card-body">
+                                          <form class="forms-sample">
+                                                <input type="hidden" id="hdnExpenseId" />
+                                                <div class="form-group">
+                                                      <label for="txtHeading">Expense Head <span class="star">*</span></label>
+                                                      <input type="text" class="form-control Mandatory" id="txtExpenseHead" name="txtHeading" placeholder="Heading Text" data-label="Expense Head">
+                                                      <small class="form-text" id="ErrtxtExpenseHead" style="display:none; color:red"></small>
+
+                                                </div>
+                                                <div class="form-group">
+                                                      <label for="exampleFormControlSelect2">Payment Type <span class="star">*</span></label>
+                                                      <select class="form-control" id="drpPaymentType">
+                                                            <option selected>--Select Payment Type--</option>
+                                                            <option>Cash</option>
+                                                            <option>Net Banking</option>
+                                                            <option>UPI</option>
+                                                      </select>
+                                                      <small class="form-text" id="ErrdrpPaymentType" style="display:none; color:red"></small>
+                                                </div>
+                                                <div class="form-group">
+                                                      <label for="txtWhomTransId">To whom/Transaction id <span class="star">*</span></label>
+                                                      <input type="text" class="form-control Mandatory" id="txtWhomTransId" placeholder="Posted Date" data-label="To whom/trasaction id">
+                                                      <small class="form-text" id="ErrtxtWhomTransId" style="display:none; color:red"></small>
+                                                </div>
+                                                <div class="form-group">
+                                                      <label for="txtPaymentDate">Payment Date <span class="star">*</span></label>
+                                                      <input type="date" class="form-control Mandatory" id="txtPaymentDate" placeholder="Posted Date" data-label="Payment Date">
+                                                      <small class="form-text" id="ErrtxtPaymentDate" style="display:none; color:red"></small>
+                                                </div>
+                                                <div class="form-group">
+                                                      <label for="txtNarration">Narration <span class="star">*</span></label>
+                                                      <input type="text" class="form-control Mandatory" id="txtNarration" placeholder="End Date" data-label="Narration">
+                                                      <small class="form-text" id="ErrtxtNarration" style="display:none; color:red"></small>
+                                                </div>
+                                                <div class="form-check form-check-flat form-check-primary">
+                                                      <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input" id="cbStatus" checked> Active
+                                                      </label>
+                                                </div>
+                                                <button type="button" class="btn btn-primary mr-2" onclick="updateExpenseDetails()">Update</button>
+                                                <a class="btn btn-primary" asp-controller="Expense" asp-action="Index">Cancel</a>
+
+                                          </form>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+

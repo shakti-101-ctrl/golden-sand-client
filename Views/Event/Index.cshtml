@@ -1,0 +1,51 @@
+﻿@{
+      ViewData["Title"] = "Event Index";
+}
+<partial name="_ValidationScriptsPartial" />
+<script src="~/js/Admin/event_crud.js"></script>
+<div class="row quick-action-toolbar">
+      <div class="col-md-12 grid-margin" style="margin-top:0px">
+            <div class="card">
+                  <div class="card-header d-block d-md-flex">
+                        <h5 class="mb-0"><i class="icon-screen-desktop"></i> Manage Event</h5>
+                        <p class="ml-auto mb-0">How are your active users trending overtime?<i class="icon-bulb"></i></p>
+                  </div>
+                  <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
+                        <div class="container-fluid" style="margin-top:10px;">
+                              <div class="row" style="margin-top:5px;">
+                                    <div class="col-md-10">
+                                          <a class="btn btn-primary" asp-controller="Event" asp-action="Create"><i class="icon-plus"></i>&nbsp;Add Event</a>
+                                    </div>
+                                    <div class="col-md-2">
+
+                                    </div>
+
+                              </div>
+                              <div class="row" style="margin:5px;">
+
+                                    <table id="eventTable" class="table-bordered" width="100%">
+                                          <thead>
+                                                <tr>
+                                                      <th>Sl No</th>
+                                                      <th>Event Id</th>
+                                                      <th>Heading Text</th>
+                                                      <th>Description</th>
+                                                      <th>Start Date</th>
+                                                      <th>End Date</th>
+                                                      <th>Active Status</th>
+                                                      <th>Action</th>
+                                                </tr>
+                                          </thead>
+                                          <tbody id="tblNoticeBody">
+                                          </tbody>
+                                    </table>
+
+                              </div>
+                        </div>
+
+                  </div>
+            </div>
+      </div>
+</div>
+
+

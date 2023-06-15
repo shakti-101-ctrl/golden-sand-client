@@ -1,0 +1,111 @@
+﻿@{
+      ViewData["Title"] = "Duplex edit page";
+}
+
+<partial name="_ValidationScriptsPartial" />
+<style>
+      span.star {
+            color: red;
+      }
+</style>
+<script src="~/js/Admin/duplex_crud.js"></script>
+<div class="row quick-action-toolbar">
+      <div class="col-md-12 grid-margin" style="margin-top:0px">
+            <div class="card">
+                  <div class="card-header d-block d-md-flex">
+                        <h5 class="mb-0"><i class="icon-note"></i> Edit Duplex</h5>
+                        <p class="ml-auto mb-0">Get the experience of using this application!!<i class="icon-bulb"></i></p>
+                  </div>
+                  <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
+                        <div class="col-md-6 grid-margin stretch-card">
+                              <div class="card">
+                                    <div class="card-body">
+                                          <form class="forms-sample" id="frmDuplexUpdate" enctype="multipart/form-data">
+                                                <input type="hidden" id="hdnDuplexId" />
+                                                <div class="row">
+                                                      <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                  <label for="txtDuplexNumber">Duplex Number <span class="star">*</span></label>
+                                                                  <input type="text" class="form-control Mandatory" id="txtDuplexNumber" name="DuplexNumber" placeholder="Duplex Number" data-label="Duplex Number">
+                                                                  <small class="form-text" id="ErrtxtDuplexNumber" style="display:none; color:red"></small>
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                  <label>Scan Copy of Adhar <span class="star">*</span></label>
+                                                                  <input type="file" name="AdharCardCopy" class="file-upload-default Mandatory" id="fileUpload1" data-label="Adhar Card">
+                                                                  <div class="input-group col-xs-12">
+                                                                        <input type="text" id="txtFileUpload1" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                                                                        <span class="input-group-append">
+                                                                              <button class="file-upload-browse btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true" id="btnUpload1"></i></button>
+                                                                        </span>
+
+                                                                  </div>
+                                                                  <br>
+                                                                  <img id="previewImage" src="#" alt="Preview" width="50" height="50">
+                                                                  <small class="form-text" id="ErrfileUpload1" style="display:none; color:red"></small>
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                  <label for="txtContactNumber">Contact <span class="star">*</span></label>
+                                                                  <input type="text" class="form-control Mandatory" id="txtContactNumber" name="Contact" placeholder="Contact Number" data-label="Contact Number">
+                                                                  <small class="form-text" id="ErrtxtContactNumber" style="display:none; color:red"></small>
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                  <label for="txtEmailAddress">Email Address <span class="star">*</span></label>
+                                                                  <input type="text" class="form-control Mandatory" id="txtEmailAddrress" name="txtEmailAddress" placeholder="Email Address" data-label="Email Address">
+                                                                  <small class="form-text" id="ErrtxtEmailAddress" style="display:none; color:red"></small>
+
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                  <label for="txtOwenrName">Owner Name <span class="star">*</span></label>
+                                                                  <input type="text" class="form-control Mandatory" id="txtOwenrName" name="OwnerName" placeholder="Owner Name" data-label="Owner Name">
+                                                                  <small class="form-text" id="ErrtxtOwenrName" style="display:none; color:red"></small>
+
+                                                            </div>
+                                                            <div class="form-group">
+
+                                                                  <label>Upload Photo <span class="star">*</span></label>
+                                                                  <input type="file" name="PhotoCopy" class="file-upload-default Mandatory" id="fileUpload2" data-label="Photo">
+                                                                  <div class="input-group col-xs-12">
+                                                                        <input type="text" id="txtFileUpload2" class="form-control file-upload-info" disabled placeholder="Upload Image" data-label="Photo">
+                                                                        <span class="input-group-append">
+                                                                              <button class="file-upload-browse btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true" id="btnUpload2"></i></button>
+                                                                        </span>
+
+                                                                  </div>
+                                                                  <br>
+                                                                  <img id="previewImage1" src="#" alt="Preview" width="50" height="50">
+                                                                  <small class="form-text" id="ErrfileUpload2" style="display:none; color:red"></small>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                  <label for="txtAlternateContact">Alternate Contact <span class="star">*</span></label>
+                                                                  <input type="text" class="form-control Mandatory" id="txtAlternateContact" name="AlternateContact" placeholder="Alternate Contact" data-label="Alternate Contact">
+                                                                  <small class="form-text" id="ErrfileUpload2" style="display:none; color:red"></small>
+
+                                                            </div>
+                                                            <div class="form-check form-check-flat form-check-primary">
+
+                                                                  <label class="form-check-label">
+                                                                        <input type="checkbox" class="form-check-input" id="cbStatus" name="ActiveStatus" checked> Active
+                                                                  </label>
+                                                            </div>
+
+                                                      </div>
+                                                      <button type="button" class="btn btn-primary mr-2" onclick="updateDuplex()">Update</button>
+                                                      <a class="btn btn-primary" asp-controller="Duplex" asp-action="Index">Cancel</a>
+
+                                                </div>
+                                          </form>
+
+
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+
